@@ -344,7 +344,7 @@ The condition in the [brief](README.md#choose-your-data) is what keeps that fair
 
 ## Attribution
 
-Two of the three provided datasets are **CC BY 4.0** (Inside Airbnb and Online Retail II). Attribution is a condition of the licence, not a formality: name the source and the licence in your README and on your data-acquisition slide. The exact lines to use are in [`data/README.md`](data/README.md). A missing attribution counts against criterion 9.
+Two of the three provided datasets are [**CC BY 4.0**](https://creativecommons.org/licenses/by/4.0/) — [Inside Airbnb](http://insideairbnb.com) and [Online Retail II](https://doi.org/10.24432/C5CG6D). Attribution is a condition of the licence, not a formality: name the source and the licence in your README and on your data-acquisition slide. The exact lines to use are in [`data/README.md`](data/README.md). A missing attribution counts against criterion 9.
 
 ---
 

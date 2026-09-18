@@ -68,11 +68,13 @@ Whichever you pick, pick it on day one and keep it. Your grade does not depend o
 
 Three datasets, all licence-clear and all rich enough to normalise. They form a difficulty ladder — read [`data/README.md`](data/README.md) for the full description of each, how to download it, and its licence.
 
-| | Dataset | Difficulty | What you get |
-|---|---|---|---|
-| **1** | **Ironhack Payments** | Gentler start | Two related tables ready-made (cash requests and fees). You normalise out lookup tables to reach 3+. |
-| **2** | **Inside Airbnb** (Barcelona, Madrid, or another city) | Middle | One wide listings file plus a reviews file. A natural district → neighbourhood hierarchy to model. |
-| **3** | **Online Retail II** (UCI) | Hardest | 1.07M transaction rows in one flat sheet. Everything — customers, products, invoices — is yours to design. |
+| | Dataset | Difficulty | Licence | What you get |
+|---|---|---|---|---|
+| **1** | **Ironhack Payments** | Gentler start | Ironhack teaching data | Two related tables ready-made (cash requests and fees). You normalise out lookup tables to reach 3+. |
+| **2** | **Inside Airbnb** (Barcelona, Madrid, or another city) | Middle | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | One wide listings file plus a reviews file. A natural district → neighbourhood hierarchy to model. |
+| **3** | **Online Retail II** (UCI) | Hardest | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 1.07M transaction rows in one flat sheet. Everything — customers, products, invoices — is yours to design. |
+
+The two CC BY datasets **require attribution** in your README and on your data-acquisition slide. That is a condition of the licence, not a nicety, and it is graded — the exact lines to use are in [`data/README.md`](data/README.md).
 
 Fetch whichever you choose with the included script:
 
