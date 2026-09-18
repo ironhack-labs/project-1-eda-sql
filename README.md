@@ -398,7 +398,12 @@ Not required, but they will strengthen your project:
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
 
-# 2. Check you have the libraries (a current Anaconda install already does)
+# 2. Check you already have the libraries - a current Anaconda install does.
+#    If this prints, skip to step 3 and install nothing.
+python -c "import pandas, numpy, matplotlib, seaborn, openpyxl; print('all present')"
+
+#    Only if that failed. See the note in requirements.txt first: running pip
+#    against a conda environment can downgrade packages you did not ask about.
 pip install -r requirements.txt
 
 # 3. Download your dataset
