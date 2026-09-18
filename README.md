@@ -95,14 +95,13 @@ Launch day (Friday of Week 2) is when you settle who you are working with, pick 
 
 The decisions you make today shape your entire week.
 
-- **Define your research questions.** Write down at least **2 clear questions** your analysis will answer.
+- **Firm up your research questions.** You drafted them on launch day. Today you commit to at least **2 clear questions**, checked against what you now know is actually in the data — a question you cannot answer with the columns in front of you is better found today than on Wednesday.
 - **Frame the business case.** Who would care about these findings? What decisions could they inform?
-- Set up your project: agree on task division, and set up a Trello board if that helps you.
-- Run `download_data.py` and work through **`01_eda.ipynb`**: shape, dtypes, missing values, duplicates, distributions.
+- Finish **`01_eda.ipynb`**: shape, dtypes, missing values, duplicates, distributions.
 - Pay attention to the **categorical cardinality** section. Columns with few repeated values are your lookup tables tomorrow.
 
 > [!TIP]
-> Look at the data before committing. Open the CSV, check the columns, look for missing values. Make sure you understand what each field means.
+> By the end of today you should be able to name your tables out loud. If you cannot, you are behind — Tuesday is the heaviest day of the week and it assumes you arrive with a table list.
 
 ### Day 2 — Database design and loading
 
