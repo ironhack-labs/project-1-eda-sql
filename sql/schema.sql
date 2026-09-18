@@ -18,16 +18,18 @@
 PRAGMA foreign_keys = ON;
 
 
--- --- Lookup and dimension tables -----------------------------------------
--- No foreign keys of their own, so these are created and loaded first.
+-- --- Lookup tables -------------------------------------------------------
+-- The categorical columns you pulled out: an id and the value it stands for.
+-- These have no foreign keys of their own, so they are created and loaded
+-- FIRST.
 
 
 
 
--- --- Fact table ----------------------------------------------------------
--- The rows you are analysing: the measures, plus a foreign key to each
--- table above. Created and loaded last, because every key it carries has to
--- already exist somewhere else.
+-- --- Your main table -----------------------------------------------------
+-- The rows you are actually analysing: the numbers you care about, plus one
+-- foreign key pointing at each lookup table above. Created and loaded LAST,
+-- because every key it carries has to already exist somewhere else.
 
 
 

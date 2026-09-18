@@ -143,14 +143,14 @@ Criteria **4** and **5** are specific to this project. The other eight are the I
 - The database loaded, but with orphaned foreign keys, or with foreign-key enforcement left off.
 
 **2 — Good** · *all of these apply*
-- **At least three tables**, with a clear fact table and at least two lookup or dimension tables.
+- **At least three tables**: one main table holding the rows being analysed, and at least two that it references.
 - Primary and foreign keys declared in `sql/schema.sql`, with types chosen deliberately rather than inferred by pandas.
 - Relationships make sense: each lookup table exists because a real categorical column repeated, and the cardinality is right.
 - **An ERD, committed as an image and matching the implemented schema.**
 - Referential integrity verified — no orphaned foreign keys — and the verification is visible in notebook 02.
 
 **3 — Excellent** · *at least three of the following apply*
-- The schema goes beyond a fact table with flat lookups: a multi-level hierarchy, a second fact table, or a genuine dimension with its own attributes.
+- The schema goes beyond one main table with flat lookups: a multi-level hierarchy, a second table of records worth analysing in its own right, or a referenced table carrying real attributes rather than just a label.
 - Design decisions are defended in writing, including the ones rejected and why.
 - `schema.sql` alone rebuilds the database from nothing, indexes included where they earn their place.
 - Edge cases in the relationships are handled explicitly and documented — nullable keys, children with no matching parent — rather than dropped in silence.

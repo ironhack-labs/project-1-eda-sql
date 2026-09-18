@@ -14,12 +14,10 @@ Build a complete data pipeline from raw data to visual insights. You will design
 
 In this project you build a complete data pipeline — from raw data to meaningful insights through SQL and Python visualisations. You design a relational database, populate it with real-world data, run analytical queries, and present your findings to the class.
 
-| | |
-|---|---|
-| **Format** | In pairs or on your own. Working in a pair, divide tasks daily and communicate often. |
-| **Duration** | 4 working days + presentation on Friday morning. |
-| **Tools** | Python (Pandas, Matplotlib/Seaborn), SQLite, DB Browser for SQLite, GitHub, Jupyter Notebooks. |
-| **Repository** | Click **Use this template** at the top of this page to create your own repo. |
+- **Format** — in pairs or on your own. Working in a pair, divide tasks daily and communicate often.
+- **Duration** — 4 working days + presentation on Friday morning.
+- **Tools** — Python (Pandas, Matplotlib/Seaborn), SQLite, DB Browser for SQLite, GitHub, Jupyter Notebooks.
+- **Repository** — click **Use this template** at the top of this page to create your own repo.
 
 ### The goal
 
@@ -118,7 +116,7 @@ Today you move from raw data to a structured database. This is the core engineer
 - **Validate foreign keys** before you move on. A dangling key is the failure that costs people Wednesday.
 
 > [!IMPORTANT]
-> **Load order matters.** Start with the tables that have no foreign keys (lookup and dimension tables), then load the main table that references them. And watch `if_exists`: `"replace"` drops the table and everything in it.
+> **Load order matters.** Start with the tables that have no foreign keys — your lookup tables — then load the main table that references them. And watch `if_exists`: `"replace"` drops the table and everything in it.
 
 ### Day 3 — SQL queries and analysis
 
@@ -304,12 +302,10 @@ Your main deliverable is your GitHub repo, created from this template, containin
 
 Your project must meet all of these to pass:
 
-| | |
-|---|---|
-| **Research** | Define at least **2 clear research questions** and analyse the data to address them coherently. |
-| **Data source** | Use one of the three provided datasets, or your own approved one. A **second source is a bonus**, not a requirement. |
-| **Database** | At least **3 tables**, proper primary and foreign keys, and clear relationships. |
-| **Data quality** | Clean, format and restructure the data to maintain consistency and accuracy. |
+- **Research** — define at least **2 clear research questions** and analyse the data to address them coherently.
+- **Data source** — use one of the three provided datasets, or your own approved one. A **second source is a bonus**, not a requirement.
+- **Database** — at least **3 tables**, proper primary and foreign keys, and clear relationships.
+- **Data quality** — clean, format and restructure the data to maintain consistency and accuracy.
 | **SQL analysis** | At least **5 insightful queries** using `JOIN`, `GROUP BY`, `HAVING`, subqueries and aggregations. |
 | **Visualisation** | At least **2 visualisations** with Matplotlib or Seaborn. |
 
