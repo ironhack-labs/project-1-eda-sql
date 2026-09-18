@@ -25,12 +25,12 @@ Each level is a **checklist behind a threshold**: "all of these apply", "at leas
 
 | # | Criterion | Domain | Where it is judged from |
 |---|---|---|---|
-| 1 | [Business problem solving](#1--business-problem-solving) | Business Problem Solving | Notebook 01 §7, notebook 03 §1 and §8 |
-| 2 | [Data preparation](#2--data-preparation) | Data Preparation | Notebook 01 §3–5, notebook 02 §1–3 |
+| 1 | [Business problem solving](#1--business-problem-solving) | Business Problem Solving | Research questions in notebook 01, the question and conclusions in notebook 03 |
+| 2 | [Data preparation](#2--data-preparation) | Data Preparation | The data-quality work in notebooks 01 and 02 |
 | 3 | [Data analysis and EDA](#3--data-analysis-and-eda) | Data Analysis | Notebook 01, notebook 03 |
-| 4 | [Database design](#4--database-design) | Databases & SQL | ERD, `sql/schema.sql`, notebook 02 §4–6 |
-| 5 | [SQL analysis](#5--sql-analysis) | Databases & SQL | `sql/queries.sql`, notebook 03 §2–6 |
-| 6 | [Data visualisation](#6--data-visualisation) | Data visualization and communication | Notebook 03 §7, slides |
+| 4 | [Database design](#4--database-design) | Databases & SQL | ERD, `sql/schema.sql`, the build and load in notebook 02 |
+| 5 | [SQL analysis](#5--sql-analysis) | Databases & SQL | `sql/queries.sql`, the analysis in notebook 03 |
+| 6 | [Data visualisation](#6--data-visualisation) | Data visualization and communication | Notebook 03, slides |
 | 7 | [Code quality and structure](#7--code-quality-and-structure) | Coding | `src/functions.py`, the repo as a whole |
 | 8 | [Git and GitHub](#8--git-and-github) | Coding | Commit history |
 | 9 | [Documentation](#9--documentation) | Coding | `README.md`, docstrings, comments |
@@ -269,13 +269,13 @@ Criteria **4** and **5** are specific to this project. The other eight are the I
 **2 — Good** · *at least two of these apply*
 - Several commits made during the project, but fewer than one per project day.
 - Commit messages are clear and accurately describe the changes.
-- Both partners have commits in the history.
+- Working in a pair, both people have commits in the history.
 - No data files committed — `data/` stayed ignored.
 
 **3 — Excellent** · *all of these apply*
-- **At least one commit per project day** from each partner.
+- **At least one commit per project day**, from each person if you are working in a pair.
 - Atomic commits with accurate, precise descriptions, consistently.
-- Separate branches used for development, since you are working in pairs.
+- Branches used for development rather than committing everything straight to `main`.
 
 ---
 
@@ -308,7 +308,7 @@ Criteria **4** and **5** are specific to this project. The other eight are the I
 
 **Learning outcome:** Build a presentation and perform a demo to deliver your results.
 
-Format: **7 minutes of slides plus a 3-minute live demo.** Slides must be online — Google Slides, Prezi or Slides.com. Local files are not accepted.
+Format: **7 minutes of slides plus a 3-minute live demo**, presented from your own machine by sharing your screen. Any slide tool.
 
 **0 — Incomplete** · *at least two of these apply*
 - The presentation lacks clear structure and purpose, making the results hard to follow.

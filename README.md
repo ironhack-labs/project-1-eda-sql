@@ -16,7 +16,7 @@ In this project you build a complete data pipeline — from raw data to meaningf
 
 | | |
 |---|---|
-| **Format** | Work in pairs. Divide tasks daily and communicate often. |
+| **Format** | In pairs or on your own. Working in a pair, divide tasks daily and communicate often. |
 | **Duration** | 4 working days + presentation on Friday morning. |
 | **Tools** | Python (Pandas, Matplotlib/Seaborn), SQLite, DB Browser for SQLite, GitHub, Jupyter Notebooks. |
 | **Repository** | Click **Use this template** at the top of this page to create your own repo. |
@@ -91,7 +91,7 @@ Files land in `data/raw/`, which is gitignored. **Do not commit data.** Anyone c
 
 ## Day-by-day breakdown
 
-Launch day (Friday of Week 2) is when you form pairs, pick your dataset and click **Use this template** — so Monday starts with the data already downloaded.
+Launch day (Friday of Week 2) is when you settle who you are working with, pick your dataset and click **Use this template** — so Monday starts with the data already downloaded.
 
 ### Day 1 — Questions, extraction and EDA
 
@@ -136,7 +136,7 @@ The final push. Turn your findings into visuals and a narrative.
 
 - Create **at least 2 visualisations** with Matplotlib or Seaborn that support your key findings.
 - Finish `03_hypothesis_and_visualization.ipynb`. **This notebook is your report deliverable**: text, code, outputs and charts telling the full story.
-- Build your slides in **Google Slides** (or Prezi, or Slides.com). They must be accessible online — no PowerPoint or Keynote files.
+- Build your slides in whatever tool you like — you present by sharing your own screen.
 - Finalise the repo: clean up code, write your README, organise files.
 - Practise the presentation. You have **7 minutes of slides plus a 3-minute live demo**.
 
@@ -154,7 +154,7 @@ The core challenge is designing a database with at least 3 tables. You have two 
 Start from a single dataset and normalise it by extracting categorical columns into lookup tables. This is the recommended path: more controlled, easier to manage.
 
 1. **Pick your main dataset.** Something with enough columns and rows to be interesting.
-2. **Identify categorical columns.** Look for columns with a small number of repeated values — categories, types, locations, ratings. The `categorical_report` starter in notebook 01 finds them for you.
+2. **Identify categorical columns.** Look for columns with a small number of repeated values — categories, types, locations, ratings.
 3. **Create lookup tables.** For each one, build a table with an ID and the descriptive value. Replace the original column in the main table with a foreign key.
 4. **Design the ERD.** Draw the relationships. Define primary and foreign keys.
 5. **Clean and export.** Clean each DataFrame and export them as separate CSVs.
@@ -298,7 +298,7 @@ Your main deliverable is your GitHub repo, created from this template, containin
 | `src/functions.py` | Reusable functions for cleaning, transformation and loading. Your logic lives in functions, not pasted into cells. |
 | `notebooks/03_hypothesis_and_visualization.ipynb` | **The report.** The complete data story: text, clean code, outputs and visualisations. Separate from the pipeline code in notebooks 01 and 02. |
 | `download_data.py` | Left as-is, or extended if you brought your own data. It is how someone else reproduces your work without you committing the dataset. |
-| Presentation URL | A link to your online slides in your README. No local files accepted. |
+| Slides | Linked or committed in your README, so they can be read after the presentation. Any tool. |
 
 ### Minimum requirements
 
@@ -339,7 +339,7 @@ Not required, but they will strengthen your project:
 - **Name clearly.** Descriptive names for variables, functions, tables and columns. `snake_case` in both Python and SQL.
 - **Clean up.** Remove unused imports, commented-out code and test cells before submitting.
 - **Comment thoughtfully.** Explain *why*, not *what*. A comment should add context the code does not already carry.
-- **Commit often.** Small, frequent commits with descriptive messages. Your partner should know what you worked on from the history alone.
+- **Commit often.** Small, frequent commits with descriptive messages. Working in a pair, your partner should know what you worked on from the history alone.
 
 <br>
 
@@ -352,11 +352,11 @@ Not required, but they will strengthen your project:
 | **Total** | **10 minutes** |
 
 > [!IMPORTANT]
-> All presentations run from a staff member's computer. Your slides **must** be online — Google Slides, Prezi or Slides.com. PowerPoint and Keynote files will not be accepted.
+> **You present from your own machine by sharing your screen.** Use whatever slide tool you prefer. Have everything open and ready before your slot — the clock does not wait while you find a file. Put a link to the slides, or the exported file, in your README so they can be read afterwards.
 
 ### Suggested slide structure (~10 slides)
 
-1. **Title** — project title and team member names.
+1. **Title** — project title and your name or names.
 2. **Project overview** — your dataset, the business problem, your guiding hypotheses.
 3. **Data acquisition** — sources used, challenges while sourcing, how any supplemental data aligns with the primary data.
 4. **Database design** — show your ERD. Explain the relationships and defend your design decisions.
@@ -364,11 +364,13 @@ Not required, but they will strengthen your project:
 6. **Visualisations** (1–2 slides) — your main charts and what they reveal.
 7. **Conclusions** — do the findings support or refute your hypotheses? What are the business implications?
 8. **Biggest obstacle** — what went wrong, what you learned, how it shaped the project.
-9. **Closing** — project title, team names, thank you.
+9. **Closing** — project title, your name or names, thank you.
 
 <br>
 
 ## Repo layout
+
+The notebooks are laid out in sections with the intent of each one written down, and `src/functions.py` names a few functions that are usually worth having. Everything else is empty on purpose. **This is a place to start, not a template to fill in** — rename things, add sections, delete the ones that do not fit your data. You are graded on the analysis, not on how closely you followed the scaffold.
 
 ```
 .
@@ -419,7 +421,7 @@ jupyter lab notebooks/01_eda.ipynb
 
 1. **Choose your data on launch day and commit to it.** Switching mid-week costs you time you do not have.
 2. **Break the project into small tasks.** Many simple steps are easier to manage than one giant one.
-3. **Commit early and often.** Name your commits clearly so your partner knows what changed.
+3. **Commit early and often.** Name your commits clearly — in a pair, so your partner knows what changed; on your own, so you do.
 4. **Explore the data before designing the database.** Understanding the data is half the work.
 5. **Ask for help early.** Stuck for more than 30 minutes? Reach out to a classmate, your TA or your teacher.
 6. **Test your SQL incrementally.** Start simple, then build complexity.
