@@ -1,0 +1,22 @@
+# Minimum versions, not exact pins: most of you are on Anaconda, and hard pins
+# fight an existing conda environment. A current Anaconda install already
+# satisfies all of this, so `pip install -r requirements.txt` should be a no-op.
+#
+#   pip install -r requirements.txt
+
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+seaborn>=0.12
+
+# Reading the Online Retail II workbook (option 3 only).
+openpyxl>=3.1
+
+# Notebooks. Already present if you installed Anaconda or JupyterLab.
+jupyterlab>=4.0
+ipykernel>=6.0
+
+# SQLite needs nothing: sqlite3 ships with Python.
+# Going the MySQL route instead? Add these two:
+# sqlalchemy>=2.0
+# pymysql>=1.1
