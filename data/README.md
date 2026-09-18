@@ -52,8 +52,8 @@ A quarterly snapshot of every Airbnb listing in a city. Barcelona is the default
 
 | File | Rows (Barcelona) | What it is |
 |---|---|---|
-| `listings.csv` | ~15,300 | One row per listing, 75+ columns: price, room type, neighbourhood, district, host, review scores, availability. |
-| `reviews.csv` | ~900,000 | One row per review: `listing_id` and `date`. A second table worth analysing on its own, joined on a key that already exists. |
+| `listings.csv` | 15,293 | One row per listing, 90 columns: price, room type, neighbourhood, district, host, review scores, availability. |
+| `reviews.csv` | 1,033,523 | One row per review: `listing_id` and `date`. A second table worth analysing on its own, joined on a key that already exists. |
 
 **Business questions it supports.** Which districts command the highest price per night, and does that hold once you adjust for how many people a listing sleeps? Do entire homes score better on reviews than private rooms? Where is hosting most professionalised — which neighbourhoods have the highest listings-per-host? How has review volume moved over time, and did some neighbourhoods peak earlier than others?
 

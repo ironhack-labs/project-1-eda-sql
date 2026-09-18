@@ -366,7 +366,7 @@ Not required, but they will strengthen your project:
 
 ## Repo layout
 
-The notebooks are laid out in sections with the intent of each one written down, and `src/functions.py` names a few functions that are usually worth having. Everything else is empty on purpose. **This is a place to start, not a template to fill in** — rename things, add sections, delete the ones that do not fit your data. You are graded on the analysis, not on how closely you followed the scaffold.
+The notebooks are laid out in sections with the intent of each one written down, and `src/functions.py` holds three empty stubs that exist only to show the shape. Everything else is empty on purpose. **This is a place to start, not a template to fill in** — rename things, add sections, delete the ones that do not fit your data. You are graded on the analysis, not on how closely you followed the scaffold.
 
 ```
 .
