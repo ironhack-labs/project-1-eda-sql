@@ -1,38 +1,99 @@
--- =========================================================================
--- schema.sql - the tables your database is made of
---
--- Project 1 | SQL: From Data to Insight
--- Team:
--- Dataset:
---
--- This is a DELIVERABLE: it is how someone rebuilds your database from
--- nothing, and the tables here must match the ERD you drew.
---
--- Written for SQLite. On MySQL, add a CREATE DATABASE / USE at the top and
--- swap the types (TEXT -> VARCHAR(n), REAL -> DECIMAL, INTEGER PRIMARY KEY
--- -> INT PRIMARY KEY AUTO_INCREMENT).
--- =========================================================================
 
--- SQLite does not enforce foreign keys unless you ask it to, once per
--- connection. Without this line a broken key is accepted in silence.
 PRAGMA foreign_keys = ON;
 
+DROP TABLE IF EXISTS cv_points;
+DROP TABLE IF EXISTS measurements;
+DROP TABLE IF EXISTS electrolytes;
+DROP TABLE IF EXISTS sources;
+DROP TABLE IF EXISTS orientations;
+DROP TABLE IF EXISTS materials;
 
--- --- Lookup tables -------------------------------------------------------
--- The categorical columns you pulled out: an id and the value it stands for.
--- These have no foreign keys of their own, so they are created and loaded
--- FIRST.
+CREATE TABLE materials (
+    material_id INTEGER PRIMARY KEY,
+    material_name TEXT NOT NULL UNIQUE
+);
 
+CREATE TABLE orientations (
+    orientation_id INTEGER PRIMARY KEY,
+    orientation_name TEXT NOT NULL UNIQUE
+);
 
+CREATE TABLE sources (
+    source_id INTEGER PRIMARY KEY,
+    citation_key TEXT NOT NULL UNIQUE,
+    title TEXT,
+    journal TEXT,
+    publication_year INTEGER,
+    doi_url TEXT
+);
 
+CREATE TABLE electrolytes (
+    electrolyte_id INTEGER PRIMARY KEY,
+    electrolyte_type TEXT,
+    electrolyte_condition TEXT NOT NULL,
+    solvent TEXT,
+    gas TEXT,
+    concentrations TEXT
+);
 
--- --- Your main table -----------------------------------------------------
--- The rows you are actually analysing: the numbers you care about, plus one
--- foreign key pointing at each lookup table above. Created and loaded LAST,
--- because every key it carries has to already exist somewhere else.
+CREATE TABLE measurements (
+    measurement_id INTEGER PRIMARY KEY,
+    entry_id TEXT NOT NULL UNIQUE,
 
+    material_id INTEGER NOT NULL,
+    orientation_id INTEGER NOT NULL,
+    electrolyte_id INTEGER NOT NULL,
+    source_id INTEGER NOT NULL,
 
+    electrode_type TEXT,
+    reference_electrode TEXT,
+    reference_material TEXT,
+    counter_electrode TEXT,
 
+    measurement_type TEXT NOT NULL,
 
--- --- Indexes (optional) --------------------------------------------------
--- Worth adding on your foreign keys if a query starts to feel slow.
+    scan_rate_value REAL,
+    scan_rate_unit TEXT,
+    scan_rate_category TEXT,
+
+    potential_name TEXT,
+    potential_unit TEXT,
+    potential_reference TEXT,
+
+    current_name TEXT,
+    current_unit TEXT,
+
+    FOREIGN KEY (material_id)
+        REFERENCES materials(material_id),
+
+    FOREIGN KEY (orientation_id)
+        REFERENCES orientations(orientation_id),
+
+    FOREIGN KEY (electrolyte_id)
+        REFERENCES electrolytes(electrolyte_id),
+
+    FOREIGN KEY (source_id)
+        REFERENCES sources(source_id)
+);
+
+CREATE TABLE cv_points (
+    point_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    measurement_id INTEGER NOT NULL,
+    entry_id TEXT NOT NULL,
+
+    t REAL NOT NULL,
+    E REAL NOT NULL,
+
+    j REAL,
+    I REAL,
+    cycle INTEGER,
+
+    signal_type TEXT NOT NULL,
+
+    FOREIGN KEY (measurement_id)
+        REFERENCES measurements(measurement_id),
+
+    FOREIGN KEY (entry_id)
+        REFERENCES measurements(entry_id)
+);
