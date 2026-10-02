@@ -2,7 +2,7 @@
 
 # Project 1 | SQL: From Data to Insight
 
-*Data Science & Machine Learning — Week 3*
+_Data Science & Machine Learning — Week 3_
 
 Build a complete data pipeline from raw data to visual insights. You will design a relational database, write SQL queries, and tell a story with data.
 
@@ -66,11 +66,11 @@ Whichever you pick, pick it on day one and keep it. Your grade does not depend o
 
 Three datasets, all licence-clear and all rich enough to normalise. They form a difficulty ladder — read [`data/README.md`](data/README.md) for the full description of each, how to download it, and its licence.
 
-| | Dataset | Difficulty | Licence | What you get |
-|---|---|---|---|---|
-| **1** | **Ironhack Payments** | Gentler start | Ironhack teaching data | Two related tables ready-made (cash requests and fees). You normalise out lookup tables to reach 3+. |
-| **2** | **Inside Airbnb** (Barcelona, Madrid, or another city) | Middle | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | One wide listings file plus a reviews file. A natural district → neighbourhood hierarchy to model. |
-| **3** | **Online Retail II** (UCI) | Hardest | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 1.07M transaction rows in one flat sheet. Everything — customers, products, invoices — is yours to design. |
+|       | Dataset                                                | Difficulty    | Licence                                                   | What you get                                                                                               |
+| ----- | ------------------------------------------------------ | ------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **1** | **Ironhack Payments**                                  | Gentler start | Ironhack teaching data                                    | Two related tables ready-made (cash requests and fees). You normalise out lookup tables to reach 3+.       |
+| **2** | **Inside Airbnb** (Barcelona, Madrid, or another city) | Middle        | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | One wide listings file plus a reviews file. A natural district → neighbourhood hierarchy to model.         |
+| **3** | **Online Retail II** (UCI)                             | Hardest       | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 1.07M transaction rows in one flat sheet. Everything — customers, products, invoices — is yours to design. |
 
 The two CC BY datasets **require attribution** in your README and on your data-acquisition slide. That is a condition of the licence, not a nicety, and it is graded — the exact lines to use are in [`data/README.md`](data/README.md).
 
@@ -173,11 +173,11 @@ Let's walk through Option A on the classic Titanic dataset, splitting one table 
 
 Titanic has columns like `PassengerId`, `Name`, `Sex`, `Age`, `Pclass`, `Fare`, `Embarked`, `Survived`.
 
-| PassengerId | Name | Pclass | Embarked | Age | Survived |
-|---|---|---|---|---|---|
-| 1 | Braund, Owen | 3 | S | 22 | 0 |
-| 2 | Cumings, John | 1 | C | 38 | 1 |
-| 3 | Heikkinen, Laina | 3 | S | 26 | 1 |
+| PassengerId | Name             | Pclass | Embarked | Age | Survived |
+| ----------- | ---------------- | ------ | -------- | --- | -------- |
+| 1           | Braund, Owen     | 3      | S        | 22  | 0        |
+| 2           | Cumings, John    | 1      | C        | 38  | 1        |
+| 3           | Heikkinen, Laina | 3      | S        | 26  | 1        |
 
 ### Step 2 — identify columns to extract
 
@@ -188,18 +188,18 @@ Titanic has columns like `PassengerId`, `Name`, `Sex`, `Age`, `Pclass`, `Fare`, 
 **`ticket_class`**
 
 | class_id | class_name |
-|---|---|
-| 1 | 1st Class |
-| 2 | 2nd Class |
-| 3 | 3rd Class |
+| -------- | ---------- |
+| 1        | 1st Class  |
+| 2        | 2nd Class  |
+| 3        | 3rd Class  |
 
 **`port`**
 
-| port_id | port_name |
-|---|---|
-| 1 | Cherbourg |
-| 2 | Queenstown |
-| 3 | Southampton |
+| port_id | port_name   |
+| ------- | ----------- |
+| 1       | Cherbourg   |
+| 2       | Queenstown  |
+| 3       | Southampton |
 
 ### Step 4 — update the main table with foreign keys
 
@@ -207,10 +207,10 @@ Replace `Pclass` with `class_id` (FK) and `Embarked` with `port_id` (FK).
 
 **`passengers`**
 
-| passenger_id (PK) | name | class_id (FK) | port_id (FK) | age | survived |
-|---|---|---|---|---|---|
-| 1 | Braund, Owen | 3 | 3 | 22 | 0 |
-| 2 | Cumings, John | 1 | 1 | 38 | 1 |
+| passenger_id (PK) | name          | class_id (FK) | port_id (FK) | age | survived |
+| ----------------- | ------------- | ------------- | ------------ | --- | -------- |
+| 1                 | Braund, Owen  | 3             | 3            | 22  | 0        |
+| 2                 | Cumings, John | 1             | 1            | 38  | 1        |
 
 ### Step 5 — the ERD
 
@@ -286,16 +286,16 @@ Then verify: row counts per table, and one test join that returns rows.
 
 Your main deliverable is your GitHub repo, created from this template, containing:
 
-| Item | Description |
-|---|---|
-| `README.md` | Project documentation. Anyone reading it should understand the project without browsing all the files. Replace this brief with your own. |
-| `sql/schema.sql` | Your `CREATE TABLE` statements and any other schema definitions. |
-| ERD diagram | An image showing tables, columns, primary keys, foreign keys and relationships. Excalidraw or draw.io. Commit it and link it from your README. |
-| `sql/queries.sql` | All the queries used in your analysis, with comments explaining the purpose and the finding. |
-| `src/functions.py` | Reusable functions for cleaning, transformation and loading. Your logic lives in functions, not pasted into cells. |
+| Item                                              | Description                                                                                                                                    |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                                       | Project documentation. Anyone reading it should understand the project without browsing all the files. Replace this brief with your own.       |
+| `sql/schema.sql`                                  | Your `CREATE TABLE` statements and any other schema definitions.                                                                               |
+| ERD diagram                                       | An image showing tables, columns, primary keys, foreign keys and relationships. Excalidraw or draw.io. Commit it and link it from your README. |
+| `sql/queries.sql`                                 | All the queries used in your analysis, with comments explaining the purpose and the finding.                                                   |
+| `src/functions.py`                                | Reusable functions for cleaning, transformation and loading. Your logic lives in functions, not pasted into cells.                             |
 | `notebooks/03_hypothesis_and_visualization.ipynb` | **The report.** The complete data story: text, clean code, outputs and visualisations. Separate from the pipeline code in notebooks 01 and 02. |
-| `download_data.py` | Left as-is, or extended if you brought your own data. It is how someone else reproduces your work without you committing the dataset. |
-| Slides | Linked or committed in your README, so they can be read after the presentation. Any tool. |
+| `download_data.py`                                | Left as-is, or extended if you brought your own data. It is how someone else reproduces your work without you committing the dataset.          |
+| Slides                                            | Linked or committed in your README, so they can be read after the presentation. Any tool.                                                      |
 
 ### Minimum requirements
 
@@ -305,8 +305,8 @@ Your project must meet all of these to pass:
 - **Data source** — use one of the three provided datasets, or your own approved one. A **second source is a bonus**, not a requirement.
 - **Database** — at least **3 tables**, proper primary and foreign keys, and clear relationships.
 - **Data quality** — clean, format and restructure the data to maintain consistency and accuracy.
-| **SQL analysis** | At least **5 insightful queries** using `JOIN`, `GROUP BY`, `HAVING`, subqueries and aggregations. |
-| **Visualisation** | At least **2 visualisations** with Matplotlib or Seaborn. |
+  | **SQL analysis** | At least **5 insightful queries** using `JOIN`, `GROUP BY`, `HAVING`, subqueries and aggregations. |
+  | **Visualisation** | At least **2 visualisations** with Matplotlib or Seaborn. |
 
 The full grading rubric is in [`RUBRIC.md`](RUBRIC.md). Read it on day one — it tells you exactly what is being evaluated.
 
@@ -333,18 +333,18 @@ Not required, but they will strengthen your project:
 - **Modularise.** Python logic in `.py` files with reusable functions. SQL in `.sql` files. The notebook is for the narrative.
 - **Name clearly.** Descriptive names for variables, functions, tables and columns. `snake_case` in both Python and SQL.
 - **Clean up.** Remove unused imports, commented-out code and test cells before submitting.
-- **Comment thoughtfully.** Explain *why*, not *what*. A comment should add context the code does not already carry.
+- **Comment thoughtfully.** Explain _why_, not _what_. A comment should add context the code does not already carry.
 - **Commit often.** Small, frequent commits with descriptive messages. Working in a pair, your partner should know what you worked on from the history alone.
 
 <br>
 
 ## Presentation guidelines
 
-| Component | Duration |
-|---|---|
-| Talking with slides | 7 minutes |
-| Live demo | 3 minutes |
-| **Total** | **10 minutes** |
+| Component           | Duration       |
+| ------------------- | -------------- |
+| Talking with slides | 7 minutes      |
+| Live demo           | 3 minutes      |
+| **Total**           | **10 minutes** |
 
 > [!IMPORTANT]
 > **You present from your own machine by sharing your screen.** Use whatever slide tool you prefer. Have everything open and ready before your slot — the clock does not wait while you find a file. Put a link to the slides, or the exported file, in your README so they can be read afterwards.
