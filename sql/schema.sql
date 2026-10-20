@@ -23,7 +23,9 @@ PRAGMA foreign_keys = ON;
 -- These have no foreign keys of their own, so they are created and loaded
 -- FIRST.
 
-
+CREATE TABLE IF NOT EXISTS participants (
+    participant_id INTEGER PRIMARY KEY
+);
 
 
 -- --- Your main table -----------------------------------------------------
@@ -32,6 +34,91 @@ PRAGMA foreign_keys = ON;
 -- because every key it carries has to already exist somewhere else.
 
 
+CREATE TABLE IF NOT EXISTS demographics (
+    participant_id INTEGER PRIMARY KEY,
+    age_years REAL,
+    sex TEXT,
+    exam_weight REAL,
+    education_level TEXT,
+    income_poverty_ratio REAL,
+    age_group TEXT,
+    poverty_group TEXT,
+
+    FOREIGN KEY (participant_id)
+        REFERENCES participants(participant_id)
+);
+
+
+
+-- =========================================================================
+-- Child table: demographics
+-- =========================================================================
+
+CREATE TABLE IF NOT EXISTS demographics (
+    participant_id INTEGER PRIMARY KEY,
+    age_years REAL,
+    sex TEXT,
+    exam_weight REAL,
+    education_level TEXT,
+    income_poverty_ratio REAL,
+    age_group TEXT,
+    poverty_group TEXT,
+
+    FOREIGN KEY (participant_id)
+        REFERENCES participants(participant_id)
+);
+
+
+-- =========================================================================
+-- Child table: physical activity
+-- =========================================================================
+
+CREATE TABLE IF NOT EXISTS physical_activity (
+    participant_id INTEGER PRIMARY KEY,
+    moderate_activity_frequency REAL,
+    moderate_activity_unit TEXT,
+    moderate_activity_minutes REAL,
+    vigorous_activity_frequency REAL,
+    vigorous_activity_unit TEXT,
+    vigorous_activity_minutes REAL,
+    sitting_minutes_per_day REAL,
+    moderate_minutes_per_week REAL,
+    vigorous_minutes_per_week REAL,
+
+    FOREIGN KEY (participant_id)
+        REFERENCES participants(participant_id)
+);
+
+
+-- =========================================================================
+-- Child table: body measurements
+-- =========================================================================
+
+CREATE TABLE IF NOT EXISTS body_measurements (
+    participant_id INTEGER PRIMARY KEY,
+    weight_kg REAL,
+    height_cm REAL,
+    bmi REAL,
+    waist_circumference_cm REAL,
+    hip_circumference_cm REAL,
+
+    FOREIGN KEY (participant_id)
+        REFERENCES participants(participant_id)
+);
+
+
+-- =========================================================================
+-- Child table: blood pressure
+-- =========================================================================
+
+CREATE TABLE IF NOT EXISTS blood_pressure (
+    participant_id INTEGER PRIMARY KEY,
+    average_upper_bp REAL,
+    average_lower_bp REAL,
+
+    FOREIGN KEY (participant_id)
+        REFERENCES participants(participant_id)
+);
 
 
 -- --- Indexes (optional) --------------------------------------------------
